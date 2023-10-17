@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Komik Interaktif</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        height: 100vh;
+        width: 100vw;
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+    }
+
+    .scene{
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        transform-origin: top;
+        transition: 1.5s;
+    }
+
+    .intro{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        background-color: #000;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .displayPoint{
+        position: relative;
+        height: 0;
+        width: 100vw;
+        z-index: 999;        
+        background-color: rgba(0, 0, 0, 0.658);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s;
+        overflow-y: hidden;
+    }
+
+
+    input{
+        padding: 5px;
+        color: #000;
+        border-radius: 10px;
+        border: none;
+        width: 40vw;
+        margin: 3px 0;
+        text-align: center;
+    }
+
+    input:focus{
+        border: 2px solid salmon;
+    }
+
+
+    
+    @media (min-width:662px) {
+        .container-foto{
+            height: 100%;
+        }
+
+    }
+    .container-foto img{
+        height: 100%;
+    }
+
+    .control{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: space-evenly;
+        transform: scale(0) translateY(1200px);
+        transition: 1.5s;
+    }
+
+    .control2{
+        display: flex;
+        justify-content: center;
+        width: 100vw;
+
+    }
+
+    .control2 h3{
+        padding: 5px;
+        background-color: aliceblue;
+        color: #000;
+        margin: 0 8px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    h2{
+        background-color: rgba(0, 0, 0, 0.342);
+        color: white;
+        padding: 3px;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+    h2 a {
+        text-decoration: none;
+        color: white;
+        padding: 4px;
+    }
+
+    @media (max-width: 622px) {
+        .scene{
+            justify-content: center;
+        }
+        .container-foto img{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2{
+            font-size: 15px;
+        }
+    }
+</style>
+<body>
+    <div class="intro">
+        <input id="nama" type="text" placeholder="Masukkan Nama :">
+        <input id="mulai" type="button" value="Mulai" style="transform: scale(0);">
+    </div>
+
+    <div class="displayPoint">
+        <div id="namaUser" class="nama">Ari </div>
+        <div id="pointUser" class="point">Point : 0</div>
+
+        <div class="control2">
+            <h3>Mulai Lagi</h3>
+            <h3><a href="index.html">Selesai</a> </h3>
+        </div>
+    </div>
+    <!-- <div class="scene">
+        <div class="container-foto">
+            <img src="img/1.png" alt="scene 1">
+        </div>
+        <div class="control">
+            <h2 id="back">back</h2>
+            <h2 id="next">next</h2>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container-foto">
+            <img src="img/2.png" alt="scene 1">
+        </div>
+        <div class="control">
+            <h2 id="back">back</h2>
+            <h2 id="next">next</h2>
+        </div>
+    </div>
+
+    <div class="scene">
+        <div class="container-foto">
+            <img src="img/3.png" alt="scene 1">
+        </div>
+        <div class="control">
+            <h2 id="back">back</h2>
+            <h2 id="next">next</h2>
+        </div>
+    </div> -->
+
+
+    
+<script>
+    for(let indexFoto = 22; indexFoto >= 1; indexFoto--){
+
+        let sceneTemp, containerFoto, img, control, h2Back, h2Next;
+
+        sceneTemp = document.createElement("div");
+        sceneTemp.setAttribute("class", "scene");
+
+        containerFoto = document.createElement("div");
+        containerFoto.setAttribute("class", "container-foto");
+
+        img = document.createElement("img");
+        img.setAttribute("src", "img/"+indexFoto+".png");
+
+        control = document.createElement("div");
+        control.setAttribute("class", "control");
+
+        h2Back = document.createElement("h2");
+        h2Back.innerHTML = "Kembali";
+        h2Back.setAttribute("id", "back");
+
+        h2Next = document.createElement("h2");
+        h2Next.innerHTML = "Selanjutnya";
+        h2Next.setAttribute("id", "next");
+
+        control.appendChild(h2Back);
+        control.appendChild(h2Next);
+        containerFoto.appendChild(img);
+
+        sceneTemp.appendChild(containerFoto);
+        sceneTemp.appendChild(control);
+
+        document.body.appendChild(sceneTemp);
+    }
+    
+
+
+    let scene = document.getElementsByClassName("scene");
+
+    for(let i = 0; i < scene.length; i++){
+        let tblBack = scene[i].querySelector("#back"),
+            tblNext = scene[i].querySelector("#next");
+            
+        if(i == 0){
+            // tblNext.innerHTML = "<a href='index.html'>Selesai</a>";
+            tblNext.style.display = "none";
+            let tblFinish = document.createElement("h2");
+            tblFinish.setAttribute("id", "finish");
+            tblFinish.innerText = "Selesai";
+
+            scene[i].querySelector(".control").appendChild(tblFinish);
+            tblFinish.addEventListener("click", ()=>{
+                document.querySelector(".displayPoint").style.height = "100vh";
+            })
+            
+        }else if( i == scene.length-1){
+            scene[i].querySelector(".control").style.transform = "scale(1)";
+            tblBack.innerHTML = "<a href='index.html'>Kembali</a>";
+            
+        }
+        
+        tblNext.addEventListener("click", () => {
+            // scene[i].style.transform = "translate(1980px)";
+            scene[i].style.transform = "rotateX(90deg)"
+            scene[i-1].querySelector(".control").style.transform = "scale(1)";
+            // setTimeout(() => {
+                //     scene[i].style.zIndex = i;
+                // },1500)
+                
+            });
+            
+            tblBack.addEventListener("click", () => {
+                scene[i+1].style.transform = "rotateX(0)"
+                scene[i].querySelector(".control").style.transform = "scale(0)";
+
+
+        });
+
+        
+        
+    }
+
+    let btnMulai = document.getElementById("mulai"),
+        inp = document.getElementById("nama");
+        intro = document.querySelector(".intro");
+
+        inp.addEventListener("input", () => {
+            btnMulai.style.transform = "scale(1)";
+        })
+
+        btnMulai.addEventListener("click", () =>{
+            intro.style.display = "none";
+            document.getElementById("namaUser").innerText = inp.value;
+    })
+</script>
+</body>
+</html>
