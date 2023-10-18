@@ -13,14 +13,14 @@
     body{
         height: 100vh;
         width: 100vw;
-        overflow-x: hidden;
+        overflow: hidden;
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .scene{
         display: flex;
-        height: 100%;
         flex-direction: column;
         align-items: center;
         position: absolute;
@@ -42,8 +42,93 @@
         align-items: center;
     }
 
-    .displayPoint{
+    .user{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #000;
+        align-items: center;
+        position: absolute;
+        height: 100vh;
+        width: 100vw;
+        z-index: 1;
+    }
+
+    .dificult{
+        color: white;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+    .home{
+        color: white;
+        background-color: rgb(0, 0, 0);
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        z-index: 3;
+        background-image: url(img/0.png);
+        background-size: cover;
+        background-position: center;
+        transition: .2s;
+    }
+
+    .home h1, .home h3{
+        position: absolute;
+        margin: 5%;
+        color: #000;
+        border: 1px solid;
+    }
+
+    .home h3:nth-child(3){
+        right: 0;
+        bottom: 0;
+    }
+
+    .home h3:nth-child(2){
+        left: 0;
+        bottom: 0;
+    }
+    .home h1{
+        right: 0;
+        top: 0;
+    }
+
+    .komik{
         position: relative;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+    .container-scene{
+        position: relative;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .header{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 10vh;
+        background-color: #00000081;
+        color: white;
+        z-index: 99;
+    }
+    .displayPoint{
+        position: absolute;
         height: 0;
         width: 100vw;
         z-index: 999;        
@@ -55,6 +140,45 @@
         align-items: center;
         transition: 1s;
         overflow-y: hidden;
+    }
+
+    .container-soal{
+        background-color: rgba(0, 0, 0, 0.836);
+        position: absolute;
+        height: 80vh;
+        width: 100vw;
+        color: white;
+        padding: 5%;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateY(1980px);
+        transition: .9s;
+        bottom: 0;
+
+
+    }
+
+    .soal{
+        font-weight: bold;
+    }
+
+    .jawaban{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    .jawaban h3{
+        text-align: center;
+        border: 1px solid;
+        border-radius: 10px;
+        cursor: pointer;
+        margin: 5px ;
     }
 
 
@@ -77,6 +201,12 @@
     @media (min-width:662px) {
         .container-foto{
             height: 100%;
+        }
+        .scene{
+            height: 100%;
+        }
+        .container-soal{
+            height: 90vh;
         }
 
     }
@@ -111,14 +241,14 @@
         font-size: 12px;
     }
 
-    h2{
+    .control h2{
         background-color: rgba(0, 0, 0, 0.342);
         color: white;
         padding: 3px;
         border-radius: 10px;
         cursor: pointer;
     }
-    h2 a {
+    .control h2 a {
         text-decoration: none;
         color: white;
         padding: 4px;
@@ -138,23 +268,62 @@
         h2{
             font-size: 15px;
         }
+
+        .jawaban h3{
+            font-size: 12px;
+            font-weight: normal;
+    }
     }
 </style>
 <body>
     <div class="intro">
-        <input id="nama" type="text" placeholder="Masukkan Nama :">
-        <input id="mulai" type="button" value="Mulai" style="transform: scale(0);">
+        <div class="home">
+            <h1>Pandawa Quiz</h1>
+            <h3>Tema Quiz</h3>
+            <h3 id="iconStart">Icon Next</h3>
+        </div>
+
+        <div class="user">
+            <input id="nama" type="text" placeholder="Masukkan Nama :">
+            <input id="mulai" type="button" value="Mulai" style="transform: scale(0);">
+        </div>
+
+        <div class="dificult">
+            <h1 id="basic">basic</h1>
+            <h1 id="intermediate">intermediate</h1>
+        </div>
+
+    </div>
+    
+    <div class="komik">        
+        <div class="container-scene">
+            
+        </div>
+
+        <div class="header">
+            <h2 id="namaUser" >Nama</h2>
+            <h2 id="pointUser">Point : 0</h2>
+            <h2>Pandawa</h2>
+        </div>
     </div>
 
     <div class="displayPoint">
-        <div id="namaUser" class="nama">Ari </div>
-        <div id="pointUser" class="point">Point : 0</div>
-
+        <div id="namaUser2" class="nama">Ari </div>
+        <div id="pointUser2" class="point">Point : 0</div>
+        <div id="ket"></div>
+        
         <div class="control2">
-            <h3>Mulai Lagi</h3>
-            <h3><a href="index.html">Selesai</a> </h3>
+            <h3><a href="index.html">Mulai Lagi</a> </h3>
         </div>
     </div>
+
+    <!-- <div class="container-soal">
+        <div class="soal">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci architecto molestiae ab soluta nemo. Quisquam, perspiciatis quod, nam ipsam quos sapiente excepturi, consequatur voluptatem dolores delectus dolore sint consequuntur esse!</div>
+        <div class="jawaban">
+            <h3 id="pil1">pilihan 1</h3>
+            <h3 id="pil2">pilihan 2</h3>
+        </div>
+    </div> -->
     <!-- <div class="scene">
         <div class="container-foto">
             <img src="img/1.png" alt="scene 1">
@@ -186,101 +355,6 @@
     </div> -->
 
 
-    
-<script>
-    for(let indexFoto = 22; indexFoto >= 1; indexFoto--){
-
-        let sceneTemp, containerFoto, img, control, h2Back, h2Next;
-
-        sceneTemp = document.createElement("div");
-        sceneTemp.setAttribute("class", "scene");
-
-        containerFoto = document.createElement("div");
-        containerFoto.setAttribute("class", "container-foto");
-
-        img = document.createElement("img");
-        img.setAttribute("src", "img/"+indexFoto+".png");
-
-        control = document.createElement("div");
-        control.setAttribute("class", "control");
-
-        h2Back = document.createElement("h2");
-        h2Back.innerHTML = "Kembali";
-        h2Back.setAttribute("id", "back");
-
-        h2Next = document.createElement("h2");
-        h2Next.innerHTML = "Selanjutnya";
-        h2Next.setAttribute("id", "next");
-
-        control.appendChild(h2Back);
-        control.appendChild(h2Next);
-        containerFoto.appendChild(img);
-
-        sceneTemp.appendChild(containerFoto);
-        sceneTemp.appendChild(control);
-
-        document.body.appendChild(sceneTemp);
-    }
-    
-
-
-    let scene = document.getElementsByClassName("scene");
-
-    for(let i = 0; i < scene.length; i++){
-        let tblBack = scene[i].querySelector("#back"),
-            tblNext = scene[i].querySelector("#next");
-            
-        if(i == 0){
-            // tblNext.innerHTML = "<a href='index.html'>Selesai</a>";
-            tblNext.style.display = "none";
-            let tblFinish = document.createElement("h2");
-            tblFinish.setAttribute("id", "finish");
-            tblFinish.innerText = "Selesai";
-
-            scene[i].querySelector(".control").appendChild(tblFinish);
-            tblFinish.addEventListener("click", ()=>{
-                document.querySelector(".displayPoint").style.height = "100vh";
-            })
-            
-        }else if( i == scene.length-1){
-            scene[i].querySelector(".control").style.transform = "scale(1)";
-            tblBack.innerHTML = "<a href='index.html'>Kembali</a>";
-            
-        }
-        
-        tblNext.addEventListener("click", () => {
-            // scene[i].style.transform = "translate(1980px)";
-            scene[i].style.transform = "rotateX(90deg)"
-            scene[i-1].querySelector(".control").style.transform = "scale(1)";
-            // setTimeout(() => {
-                //     scene[i].style.zIndex = i;
-                // },1500)
-                
-            });
-            
-            tblBack.addEventListener("click", () => {
-                scene[i+1].style.transform = "rotateX(0)"
-                scene[i].querySelector(".control").style.transform = "scale(0)";
-
-
-        });
-
-        
-        
-    }
-
-    let btnMulai = document.getElementById("mulai"),
-        inp = document.getElementById("nama");
-        intro = document.querySelector(".intro");
-
-        inp.addEventListener("input", () => {
-            btnMulai.style.transform = "scale(1)";
-        })
-
-        btnMulai.addEventListener("click", () =>{
-            intro.style.display = "none";
-            document.getElementById("namaUser").innerText = inp.value;
-    })
-</script>
+    <script src="main.js"></script>
 </body>
 </html>
