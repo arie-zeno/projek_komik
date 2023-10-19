@@ -217,7 +217,7 @@ let iconMulai = document.getElementById("iconStart"),
         "Pedoman Hidup Bersih dan Sejahtera",
         "Perilaku  Hidup Bahagia dan Sejahtera",
         "Panduan Hidup Bersih dan Sehat",
-        "Perilaku Hidup Bahagia dan Sehat",
+        "Perilaku Hidup Bersih dan Sehat",
         "Perilaku Hidup Bersih dan Sehat",
         ],
 
