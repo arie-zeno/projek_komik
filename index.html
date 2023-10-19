@@ -79,10 +79,11 @@
     .dificult{
         color: white;
         background-image: url(img/bg_dif.png);
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
         position: absolute;
-        height: 852px;
+        height: 100vh;
         width: 1065px;
         z-index: 2;
         display: flex;
@@ -112,7 +113,7 @@
         position: absolute;
         /* height: 100%;
         width: 70%; */
-        height: 852px;
+        height: 100vh;
         width: 1065px;
         z-index: 3;
         background-size: cover;
@@ -239,7 +240,7 @@
         z-index: 100;
         background-color: white;
         background-position: center;
-        background-size: cover;
+        background-size: contain;
 
     }
 
@@ -313,21 +314,14 @@
     }
 
 
-    
-    @media (min-width:662px) {
-        .container-foto{
-            height: 100%;
-        }
-        .scene{
-            height: 100%;
-        }
-        /* .container-soal{
-            height: 100vh;
-        } */
-
+    .container-foto{
+        height: 93vh;
+        width: 1065px;
     }
+ 
     .container-foto img{
         height: 100%;
+        width: 100%;
     }
 
     .control{
@@ -416,6 +410,7 @@
 
         .container-foto {
             width: 100vw;
+            height: unset;
         }
 
         .control h2{
@@ -473,6 +468,9 @@
     }
 </style>
 <body>
+    <audio id="myAudio" loop>
+        <source src="sound/bg.mp3" type="audio/mpeg">
+      </audio>
     <div class="intro">
         <div class="home">
             <h1></h1>

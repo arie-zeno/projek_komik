@@ -1,3 +1,7 @@
+
+var audio = new Audio('sound/bg.mp3');
+audio.play()
+
 for(let indexFoto = 22; indexFoto >= 1; indexFoto--){
 
     let sceneTemp, containerFoto, img, control, h2Back, h2Next;
