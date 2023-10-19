@@ -100,8 +100,8 @@ let iconMulai = document.getElementById("iconStart"),
             if(pilihan1.id == soalBasic[i][1]){
                 console.log("jawabn benar")
                 poin += 20;
-                document.querySelector("#pointUser").innerText = "Point : " + poin;
-                document.querySelector("#pointUser2").innerText = "Point : " + poin;
+                document.querySelector("#pointUser").innerText = poin;
+                document.querySelector("#pointUser2").innerText = "Poin : " + poin;
 
                 contSoal.style.transform = "translateY(1980px)";
                 setTimeout(()=>{
@@ -125,8 +125,8 @@ let iconMulai = document.getElementById("iconStart"),
             if(pilihan2.id == soalBasic[i][1]){
                 console.log("jawabn benar")
                 poin += 20;
-                document.querySelector("#pointUser").innerText = "Point : " + poin;
-                document.querySelector("#pointUser2").innerText = "Point : " + poin;
+                document.querySelector("#pointUser").innerText = poin;
+                document.querySelector("#pointUser2").innerText = "Poin : " + poin;
 
                 contSoal.style.transform = "translateY(1980px)";
 
@@ -294,7 +294,7 @@ let iconMulai = document.getElementById("iconStart"),
         if(el.innerText == soalIntermediate[i][5]){
             console.log("jawabn benar")
             poin += 10;
-            document.querySelector("#pointUser").innerText = "Point : " + poin;
+            document.querySelector("#pointUser").innerText = poin;
             document.querySelector("#pointUser2").innerText = "Point : " + poin;
 
             contSoal.style.transform = "translateY(1980px)";
