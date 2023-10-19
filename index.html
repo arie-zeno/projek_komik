@@ -199,6 +199,18 @@
         gap: 20px;
     }
 
+    #pointUser2{
+        background-image: url(icon/tempat\ poin.png); 
+        width: 50%; 
+        height: 70px; 
+        background-size: cover; 
+        background-position: center; 
+        display: flex; 
+        justify-content: center;
+        align-items: center; 
+        color: black;
+    }
+
     .displayPoint img{
         height: 100px;
     }
@@ -407,18 +419,31 @@
 
         .container-soal{
             width: 100vw;
-            height: 100vh;
+            height: 75vh;
             bottom: unset;
             top: 0;
             z-index: 100;
+            /* background-size: contain;
+            background-repeat: no-repeat; */
+            background-size: 100%;
+            background-repeat: no-repeat;
+            
         }
 
-        /* .home h1, .home h3{
-            position: absolute;
-            margin: unset;
-            color: #000;
-            cursor: pointer;
-    } */
+        .jawaban h3{
+            padding: 5px;
+            border: 1px solid black;
+            font-size: 11px;
+            height:auto;
+        }
+        .jawaban{
+            height: 45%;
+            align-items: center;
+        }
+
+        #pointUser2{
+            width: 90%;
+        }
 
         .scene{
             justify-content: center;
@@ -477,7 +502,7 @@
 
     <div class="displayPoint">
         <div id="namaUser2" class="nama">Ari </div>
-        <div id="pointUser2" class="point" style="background-image: url(icon/tempat\ poin.png); width: 40%; height: 70px; background-size: cover; background-position: center; display: flex; justify-content: center; align-items: center; color: black;">Point : 0</div>
+        <div id="pointUser2" class="point" >Point : 0</div>
         <br>
         <div id="ket"></div>
         <br><br>

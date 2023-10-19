@@ -92,7 +92,7 @@ let iconMulai = document.getElementById("iconStart"),
         divJawaban.appendChild(pilihan1);
         divJawaban.appendChild(pilihan2);
 
-        contSoal.appendChild(divSoal);
+        // contSoal.appendChild(divSoal);
         contSoal.appendChild(divJawaban);
 
         document.body.appendChild(contSoal);
@@ -243,7 +243,10 @@ let iconMulai = document.getElementById("iconStart"),
         
         contSoal.setAttribute("class", "container-soal");
         contSoal.style.backgroundImage = `url(img/soal/${i}.png)`;
+        contSoal.style.backgroundColor = "rgba(0, 0, 0, 0.64)";
+
         divSoal.setAttribute("class", "soal");
+        // divSoal.innerText = soalIntermediate[i][0];
         // divSoal.innerText = soalIntermediate[i][0];
         divJawaban.setAttribute("class", "jawaban");
         pilihan1.setAttribute("id", "pil1");
@@ -263,7 +266,7 @@ let iconMulai = document.getElementById("iconStart"),
         divJawaban.appendChild(pilihan4);
         // divJawaban.appendChild(pilihan5);
 
-        contSoal.appendChild(divSoal);
+        // contSoal.appendChild(divSoal);
         contSoal.appendChild(divJawaban);
 
         document.body.appendChild(contSoal);
