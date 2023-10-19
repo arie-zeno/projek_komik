@@ -1,7 +1,6 @@
-
-var audio = new Audio('sound/bg.mp3');
-audio.play()
-
+soundClick = document.getElementById("click");
+soundInp = document.getElementById("inp");
+soundBg = document.getElementById("myAudio");
 for(let indexFoto = 22; indexFoto >= 1; indexFoto--){
 
     let sceneTemp, containerFoto, img, control, h2Back, h2Next;
@@ -47,9 +46,12 @@ let btnMulai = document.getElementById("mulai"),
 
     inp.addEventListener("input", () => {
         btnMulai.style.transform = "scale(1)";
+
     })
 
     btnMulai.addEventListener("click", () =>{
+        soundClick.play();
+        soundBg.play();
         intro.style.display = "none";
         document.getElementById("namaUser2").innerText = inp.value;
         document.querySelector("h2#namaUser").innerText = inp.value;
@@ -101,7 +103,9 @@ let iconMulai = document.getElementById("iconStart"),
         document.body.appendChild(contSoal);
 
         pilihan1.addEventListener("click", ()=>{
+            soundClick.play();
             if(pilihan1.id == soalBasic[i][1]){
+        
                 console.log("jawabn benar")
                 poin += 20;
                 document.querySelector("#pointUser").innerText = poin;
@@ -126,6 +130,8 @@ let iconMulai = document.getElementById("iconStart"),
         })
 
         pilihan2.addEventListener("click", ()=>{
+        soundClick.play();
+            
             if(pilihan2.id == soalBasic[i][1]){
                 console.log("jawabn benar")
                 poin += 20;
@@ -295,6 +301,8 @@ let iconMulai = document.getElementById("iconStart"),
     }
 
     function cekJawabn(contSoal,el,i){
+        soundClick.play();
+
         if(el.innerText == soalIntermediate[i][5]){
             console.log("jawabn benar")
             poin += 10;
@@ -322,16 +330,22 @@ let iconMulai = document.getElementById("iconStart"),
     basic.addEventListener("click", ()=>{
         divDificult.style.transform = "translate(-1800px)";
         dificult = "basic";
+        soundClick.play();
+
 
     });
 
     intermediate.addEventListener("click", ()=>{
         divDificult.style.transform = "translate(-1800px)";
         dificult = "intermediate";
+        soundClick.play();
+
     });
 
     iconMulai.addEventListener("click", () => {
         divHome.style.transform = "translate(-1980px)";
+        soundClick.play();
+
     });
 
 
@@ -350,6 +364,8 @@ let iconMulai = document.getElementById("iconStart"),
 
             scene[i].querySelector(".control").appendChild(tblFinish);
             tblFinish.addEventListener("click", ()=>{
+            soundInp.play();
+    
                 document.querySelector(".displayPoint").style.height = "100vh";
                 if( poin <= 50){
                     document.getElementById("ket").innerHTML = "Pengetahuan Kurang";
@@ -370,6 +386,8 @@ let iconMulai = document.getElementById("iconStart"),
    
         
         tblNext.addEventListener("click", () => {
+        soundInp.play();
+
             // scene[i].style.transform = "translate(1980px)";
             scene[i].style.opacity = "0";
             scene[i-1].querySelector(".control").style.transform = "scale(1)";
