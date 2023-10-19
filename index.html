@@ -196,6 +196,7 @@
         transition: 1s;
         overflow-y: hidden;
         font-size: 25px;
+        gap: 20px;
     }
 
     .displayPoint img{
@@ -206,7 +207,7 @@
 
     .container-soal{
         position: absolute;
-        height: 852px;
+        height: 100vh;
         width: 1065px;
         color: white;
         padding: 5%;
@@ -217,7 +218,8 @@
         justify-content: end;
         transform: translateY(1980px);
         transition: .9s;
-        bottom: 0;
+        top: 0;
+        z-index: 100;
 
         background-position: center;
         background-size: cover;
@@ -366,7 +368,48 @@
 
         .home h3:nth-child(3){
             height: 40px;
-    }
+        }
+
+        .dificult {
+            width: 100vw;
+            height: 100vw;
+        }
+        .dificult div h1{
+            width: 30%;
+            font-size: 12px;
+        }
+
+        .user {
+            height: 100vh;
+            width: 100vw;
+        }
+
+        .user input{
+            height: 30px;
+        }
+        .header{
+            width: 100vw;
+        }
+
+        .container-scene{
+            height: 100vh;
+        }
+
+        .container-foto {
+            width: 100vw;
+        }
+
+        .control h2{
+            height: 40px;
+        }
+
+        .container-soal{
+            width: 100vw;
+            height: 100vh;
+            bottom: unset;
+            top: 0;
+            z-index: 100;
+        }
 
         /* .home h1, .home h3{
             position: absolute;
@@ -398,8 +441,8 @@
 <body>
     <div class="intro">
         <div class="home">
-            <h1>Pandawa Quiz</h1>
-            <h3>Tema Quiz</h3>
+            <h1></h1>
+            <h3></h3>
             <h3 id="iconStart"><img src="icon/mulai.png" alt=""></h3>
             <img src="img/0.png" alt="">
         </div>

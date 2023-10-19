@@ -1,4 +1,4 @@
-for(let indexFoto = 21; indexFoto >= 1; indexFoto--){
+for(let indexFoto = 22; indexFoto >= 1; indexFoto--){
 
     let sceneTemp, containerFoto, img, control, h2Back, h2Next;
 
@@ -98,7 +98,7 @@ let iconMulai = document.getElementById("iconStart"),
         pilihan1.addEventListener("click", ()=>{
             if(pilihan1.id == soalBasic[i][1]){
                 console.log("jawabn benar")
-                poin += 10;
+                poin += 20;
                 document.querySelector("#pointUser").innerText = "Point : " + poin;
                 document.querySelector("#pointUser2").innerText = "Point : " + poin;
 
@@ -123,7 +123,7 @@ let iconMulai = document.getElementById("iconStart"),
         pilihan2.addEventListener("click", ()=>{
             if(pilihan2.id == soalBasic[i][1]){
                 console.log("jawabn benar")
-                poin += 10;
+                poin += 20;
                 document.querySelector("#pointUser").innerText = "Point : " + poin;
                 document.querySelector("#pointUser2").innerText = "Point : " + poin;
 
@@ -153,7 +153,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Peristiwa dimana suatu daerah tergenang air dalam jumlah yang besar", 
         "Peristiwa dimana terjadi pergerakan tanah dan jatuhnya bebatuan", 
         "Peristiwa atau kondisis pengikisan permukaan bumi", 
-        "Peristiwa proses penguapan yang menyebabkan air turun ke permukaan bumi", 
         "Peristiwa dimana suatu daerah tergenang air dalam jumlah yang besar"],
 
         ["Apa penyebab terjadinya banjir ?",
@@ -161,7 +160,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Penurunan permukaan air laut",
         "Membuang sampah pada tempatnya",
         "Perencanaan pemeliharaan drainase yang baik",
-        "Reboisasi hutan yang gundul",
         "Curah hujan yang tinggi"
         ],
 
@@ -169,7 +167,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Merusak sarana prasarana",
         "Erosi dan tanah longsor",
         "Pencemaran lingkungan",
-        "Menimbulkan berbagai penyakit",
         "Lingkungan menjadi bersih",
         "Lingkungan menjadi bersih",
         ],
@@ -179,7 +176,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Diabetes Mellitus",
         "Hipertensi",
         "Hepatitis",
-        "Covid-19",
         "Diare"
         ],
 
@@ -188,7 +184,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Influenza",
         "Leptoapirosis",
         "Penyakit kulit",
-        "Kanker",
         "Demam berdarah",
         ],
 
@@ -197,7 +192,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Bersiap evakuasi dan mengungsi",
         "Membuang sampah di sungai",
         "Mengetahui istilah peringatan bahaya banjir",
-        "Menghubungi petugas PLN ",
         "Mengetahui istilah peringatan bahaya banjir",
         ],
 
@@ -206,7 +200,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Jangan takut dan panik",
         "Bersihkan tempat penampungan air dan peralatan lainnya",
         "Bersiap dan segera mungkin mengungsi jika skala banjir meningkat",
-        "Menghindari arus besar dan hewan berbahaya saat menuju pengungsian",
         "Bersihkan tempat penampungan air dan peralatan lainnya",
         ],
 
@@ -215,7 +208,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Secepatnya membersihkan rumah dengan antiseptik",
         "Menggunakan air banjir",
         "Mencatat nomor penting yang dapat dihubungi sebagai antisipasi",
-        "Mengetahui kerentanan tempat tinggal",
         "Secepatnya membersihkan rumah dengan antiseptik",
         ],
 
@@ -225,7 +217,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Panduan Hidup Bersih dan Sehat",
         "Perilaku Hidup Bahagia dan Sehat",
         "Perilaku Hidup Bersih dan Sehat",
-        "Perilaku Hidup Bersih dan Sehat",
         ],
 
         ["PHBS apa yang dapat dilakukan saat banjir ?",
@@ -233,7 +224,6 @@ let iconMulai = document.getElementById("iconStart"),
         "Membiasakan cuci tangan dengan sabun",
         "Tidak menggunakan alas kaki",
         "Merokok di tempat pengungsian",
-        "Tidak peduli dengan kebersihan lingkungan pengungsian",
         "Membiasakan cuci tangan dengan sabun",
         ]
     ];
@@ -298,7 +288,7 @@ let iconMulai = document.getElementById("iconStart"),
     }
 
     function cekJawabn(contSoal,el,i){
-        if(el.innerText == soalIntermediate[i][6]){
+        if(el.innerText == soalIntermediate[i][5]){
             console.log("jawabn benar")
             poin += 10;
             document.querySelector("#pointUser").innerText = "Point : " + poin;
@@ -344,6 +334,7 @@ let iconMulai = document.getElementById("iconStart"),
             tblNext = scene[i].querySelector("#next");
             
         if(i == 0){
+            
             // tblNext.innerHTML = "<a href='index.html'>Selesai</a>";
             tblNext.style.display = "none";
             let tblFinish = document.createElement("h2");
@@ -361,7 +352,7 @@ let iconMulai = document.getElementById("iconStart"),
                     document.getElementById("ket").innerHTML = "Pengetahuan Baik";
                 }
             })
-            
+
         }
         else if( i == scene.length-1){
             scene[i].querySelector(".control").style.transform = "scale(1)";
@@ -369,24 +360,14 @@ let iconMulai = document.getElementById("iconStart"),
             
         }
 
-            // document.querySelectorAll(".scene").forEach((e) => {
-        //     let scene = e.querySelector("img").alt;
-        //     if(scene == 3){
-        //         document.querySelectorAll(".container-soal")[0].style.transform = "translateY(0)";
-        //     }
-        // })
-
-
-        
-
-
-
-
+   
         
         tblNext.addEventListener("click", () => {
             // scene[i].style.transform = "translate(1980px)";
             scene[i].style.opacity = "0";
             scene[i-1].querySelector(".control").style.transform = "scale(1)";
+            console.log(i);
+            console.log(dificult);
 
             // cek soal per scene
             if(dificult == "basic"){
@@ -418,7 +399,7 @@ let iconMulai = document.getElementById("iconStart"),
                     
                 }else if(scene[i].querySelector("img").alt == 19){
                     document.querySelectorAll(".container-soal")[8].style.transform = "translateY(0)";
-                    document.querySelectorAll(".container-soal")[8].style.zIndex = "1";
+                    document.querySelectorAll(".container-soal")[9].style.zIndex = "1";
                     document.querySelectorAll(".container-soal")[9].style.transform = "translateY(0)";
                     
                 }else if(scene[i].querySelector("img").alt == 21){
