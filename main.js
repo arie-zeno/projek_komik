@@ -20,10 +20,10 @@ for(let indexFoto = 21; indexFoto >= 1; indexFoto--){
     h2Back.setAttribute("id", "back");
 
     h2Next = document.createElement("h2");
-    h2Next.innerHTML = "Selanjutnya";
+    h2Next.innerHTML = `<img src="icon/neks.png">`;
     h2Next.setAttribute("id", "next");
 
-    control.appendChild(h2Back);
+    // control.appendChild(h2Back);
     control.appendChild(h2Next);
     containerFoto.appendChild(img);
 
@@ -77,6 +77,8 @@ let iconMulai = document.getElementById("iconStart"),
         pilihan2 = document.createElement("h3");
         
         contSoal.setAttribute("class", "container-soal");
+        contSoal.style.backgroundColor = "rgba(0, 0, 0, 0.64)";
+        contSoal.style.alignItems = "space-between";
         divSoal.setAttribute("class", "soal");
         divSoal.innerText = soalBasic[i][0];
         divJawaban.setAttribute("class", "jawaban");
@@ -248,8 +250,9 @@ let iconMulai = document.getElementById("iconStart"),
         pilihan5 = document.createElement("h3");
         
         contSoal.setAttribute("class", "container-soal");
+        contSoal.style.backgroundImage = `url(img/soal/${i}.png)`;
         divSoal.setAttribute("class", "soal");
-        divSoal.innerText = soalIntermediate[i][0];
+        // divSoal.innerText = soalIntermediate[i][0];
         divJawaban.setAttribute("class", "jawaban");
         pilihan1.setAttribute("id", "pil1");
         pilihan1.innerText = soalIntermediate[i][1];
@@ -266,7 +269,7 @@ let iconMulai = document.getElementById("iconStart"),
         divJawaban.appendChild(pilihan2);
         divJawaban.appendChild(pilihan3);
         divJawaban.appendChild(pilihan4);
-        divJawaban.appendChild(pilihan5);
+        // divJawaban.appendChild(pilihan5);
 
         contSoal.appendChild(divSoal);
         contSoal.appendChild(divJawaban);
@@ -345,7 +348,7 @@ let iconMulai = document.getElementById("iconStart"),
             tblNext.style.display = "none";
             let tblFinish = document.createElement("h2");
             tblFinish.setAttribute("id", "finish");
-            tblFinish.innerText = "Selesai";
+            tblFinish.innerHTML = `<img src="icon/neks.png">`;
 
             scene[i].querySelector(".control").appendChild(tblFinish);
             tblFinish.addEventListener("click", ()=>{
@@ -359,9 +362,10 @@ let iconMulai = document.getElementById("iconStart"),
                 }
             })
             
-        }else if( i == scene.length-1){
+        }
+        else if( i == scene.length-1){
             scene[i].querySelector(".control").style.transform = "scale(1)";
-            tblBack.innerHTML = "<a href='index.html'>Kembali</a>";
+            // tblBack.innerHTML = "<a href='index.html'>Kembali</a>";
             
         }
 
@@ -438,15 +442,15 @@ let iconMulai = document.getElementById("iconStart"),
             });
 
             
-            tblBack.addEventListener("click", () => {
-                scene[i+1].style.transform = "rotateX(0)";
-                setTimeout( ()=>{
-                    scene[i+1].style.opacity = "1";
-                },1000)
-                scene[i].querySelector(".control").style.transform = "scale(0) translateY(500px)";
+        //     tblBack.addEventListener("click", () => {
+        //         scene[i+1].style.transform = "rotateX(0)";
+        //         setTimeout( ()=>{
+        //             scene[i+1].style.opacity = "1";
+        //         },1000)
+        //         scene[i].querySelector(".control").style.transform = "scale(0) translateY(500px)";
 
 
-        });
+        // });
 
     }
         
