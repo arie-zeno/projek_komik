@@ -80,7 +80,9 @@ let iconMulai = document.getElementById("iconStart"),
         contSoal.style.backgroundColor = "rgba(0, 0, 0, 0.64)";
         contSoal.style.alignItems = "space-between";
         divSoal.setAttribute("class", "soal");
-        divSoal.innerText = soalBasic[i][0];
+        contSoal.style.backgroundImage = `url(img/soal2/${i}.png)`;
+        // divSoal.innerText = soalBasic[i][0];
+
         divJawaban.setAttribute("class", "jawaban");
         pilihan1.setAttribute("id", "pil1");
         pilihan1.innerText = "Benar";
