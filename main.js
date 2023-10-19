@@ -77,7 +77,6 @@ let iconMulai = document.getElementById("iconStart"),
         pilihan2 = document.createElement("h3");
         
         contSoal.setAttribute("class", "container-soal");
-        contSoal.style.backgroundColor = "rgba(0, 0, 0, 0.64)";
         contSoal.style.alignItems = "space-between";
         divSoal.setAttribute("class", "soal");
         contSoal.style.backgroundImage = `url(img/soal2/${i}.png)`;
@@ -243,7 +242,6 @@ let iconMulai = document.getElementById("iconStart"),
         
         contSoal.setAttribute("class", "container-soal");
         contSoal.style.backgroundImage = `url(img/soal/${i}.png)`;
-        contSoal.style.backgroundColor = "rgba(0, 0, 0, 0.64)";
 
         divSoal.setAttribute("class", "soal");
         // divSoal.innerText = soalIntermediate[i][0];
